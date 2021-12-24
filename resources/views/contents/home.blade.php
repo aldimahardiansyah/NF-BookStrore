@@ -292,11 +292,11 @@
             ?>
             <div class="col my-2">
               <div class="card shadow-sm bg-light">
-                <a href="#">
+                <a href="/detail/{{ $latest->id }}">
                     <img src="/book/{{ $latest->thumbnail }}" height="237px" class="card-img-top" alt="{{ $latest->judul }}">
                 </a>
                 <div class="card-body p-2 d-flex flex-column justify-content-between">
-                  <a href="#" class="text-decoration-none text-dark">
+                  <a href="/detail/{{ $latest->id }}" class="text-decoration-none text-dark">
                     <h6 class="card-title fw-bold" style="font-size: 14px">{{ $latest->judul }}</h6>
                   </a>
                   <div class="d-flex flex-column flex-lg-row justify-content-between">
