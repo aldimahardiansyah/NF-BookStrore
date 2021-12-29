@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BookController::class, 'index']);
 
 Route::get('/kategori/{id}', [KategoriController::class, 'show']);
+
+Route::get('/detail/{id}', [BookController::class, 'detail']);

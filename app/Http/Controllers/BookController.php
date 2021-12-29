@@ -19,4 +19,15 @@ class BookController extends Controller
             'latests' => $latests
         ]);
     }
+
+    function detail($id)
+    {
+        $book = Book::find($id);
+
+        return view('contents.detail', [
+            'title' => 'detail',
+            'book' => $book,
+            'books' => Book::all()
+        ]);
+    }
 }
