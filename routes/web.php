@@ -24,6 +24,19 @@ Route::get('/detail/{id}', [BookController::class, 'detail']);
 Route::get('/daftar', function () {
     return view('login.member', ["title" => "Daftar Member"]);
 });
+
 Route::get('/login', function () {
     return view('login.login', ["title" => "Login"]);
+});
+
+Route::get('/blog', function(){
+    return view('contents.blog.blog', [
+        'title' => 'Blog'
+    ]);
+});
+
+Route::get('/blog/content', function(){ 
+    return view('contents.blog.Content',[
+        'title' => 'Content Blog'
+    ]);
 });

@@ -23,7 +23,7 @@
         </div>
     </div>
     <br>
-    <p>Belum memiliki Akun? <a href="Daftar">Daftar</a></p>
+    <p>Belum memiliki Akun? <a href="/daftar">Daftar</a></p>
     <div class="col-sm-5"><button type="submit" class="btn btn-primary"><i class="fab fa-facebook"></i> Masuk Melalui Facebook</button>
         <br>
         <p>Atau</p>
