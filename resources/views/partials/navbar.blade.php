@@ -5,13 +5,15 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="/">NF <span class="text-primary">Books</span></a>
         <div class="col-md-6 d-flex justify-content-md-end">
-            <div class="nav-item shadow-sm">
-                <select class="form-select border-0" aria-label="Default select example">
-                    <option selected disabled>Pilih Kategori</option>
-                    @foreach ($kategoris as $kategori)
-                      <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
-                    @endforeach
-                </select>
+            <div class="nav-item shadow-sm dropdown">
+                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Pilih Kategori
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach ($kategoris as $kategori)
+                        <li><a class="dropdown-item" href="/kategori/{{ $kategori->id }}">{{ $kategori->nama }}</a></li>
+                        @endforeach
+                      </ul>
             </div>
         </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

@@ -9,7 +9,16 @@
                 <b>Dengan Min. Transaksi Rp. 100.000</b>
             </div>
             <div class="mx-4">
-                <p>30 November - 30 Desember 2021</p>
+                <p>30 November - 15 Februari 2022</p>
+            </div>
+            <div class="mt-4 mx-4">
+              <form action="/search" method="POST">
+                @csrf
+                <div class="p-1 bg-light rounded-pill d-flex w-75">
+                  <input type="text" class="form-control border-0 rounded-pill" placeholder="Judul, kategori, penulis buku">
+                  <input type="submit" class="btn btn-primary rounded-pill px-3" value="Cari">
+                </div>
+              </form>
             </div>
         </div>
 
