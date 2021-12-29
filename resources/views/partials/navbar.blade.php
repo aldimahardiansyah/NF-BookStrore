@@ -28,7 +28,7 @@
                 <a class="nav-link" href="#"><i class="fa fa-shopping-cart text-blue"></i></a>
               </li>
               <li class="nav-item d-flex justify-content-end ml-5">
-                <a class="nav-link btn btn-primary bg-blue text-light" href="#"><strong>Masuk</strong></a>
+                <a class="nav-link btn btn-primary bg-blue text-light" href="/login"><strong>Masuk</strong></a>
               </li>
           </ul>
       </div>

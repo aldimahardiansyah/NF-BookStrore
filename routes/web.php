@@ -20,3 +20,10 @@ Route::get('/', [BookController::class, 'index']);
 Route::get('/kategori/{id}', [KategoriController::class, 'show']);
 
 Route::get('/detail/{id}', [BookController::class, 'detail']);
+
+Route::get('/daftar', function () {
+    return view('login.member', ["title" => "Daftar Member"]);
+});
+Route::get('/login', function () {
+    return view('login.login', ["title" => "Login"]);
+});
