@@ -22,13 +22,15 @@ Route::get('/kategori/{id}', [KategoriController::class, 'show']);
 
 Route::get('/detail/{id}', [BookController::class, 'detail']);
 
-Route::get('/daftar', [LoginController::class, 'daftar']);
+Route::get('/daftar', [LoginController::class, 'daftar'])->middleware('guest');
 
 Route::post('/store', [LoginController::class, 'store']);
 
-Route::get('/login', [LoginController::class, 'login']);
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 
 Route::post('/dologin', [LoginController::class, 'authenticate']);
+
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::get('/blog', function(){
     return view('contents.blog.blog', [

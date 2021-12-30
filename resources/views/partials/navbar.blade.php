@@ -28,7 +28,20 @@
                 <a class="nav-link" href="#"><i class="fa fa-shopping-cart text-blue"></i></a>
               </li>
               <li class="nav-item d-flex justify-content-end ml-5">
-                <a class="nav-link btn btn-primary bg-blue text-light" href="/login"><strong>Masuk</strong></a>
+                @if (auth()->user())
+                  <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Hai, {{ auth()->user()->name }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                          <a class="dropdown-item" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                  </div>
+                @else
+                  <a class="nav-link btn btn-primary bg-blue text-light" href="/login"><strong>Masuk</strong></a>
+                @endif
               </li>
           </ul>
       </div>

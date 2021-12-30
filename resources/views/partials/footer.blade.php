@@ -1,10 +1,12 @@
 <footer>
-    <div class="bg-blue align-items-center">
-        <div class="container d-flex justify-content-between flex-column flex-sm-row p-2">
-            <p class="fw-bold my-auto text-light fs-6">Yuk Daftar Jadi Member dan Nikmati Hal Spesial Hanya Untukmu</p>
-            <a href="/daftar" class="btn btn-light text-blue fw-bold rounded-3">Daftar</a>
+    @if (!auth()->user())
+        <div class="bg-blue align-items-center">
+            <div class="container d-flex justify-content-between flex-column flex-sm-row p-2">
+                <p class="fw-bold my-auto text-light fs-6">Yuk Daftar Jadi Member dan Nikmati Hal Spesial Hanya Untukmu</p>
+                <a href="/daftar" class="btn btn-light text-blue fw-bold rounded-3">Daftar</a>
+            </div>
         </div>
-    </div>
+    @endif
     <div class="row-12 bg-white text-blue d-flex p-4">
         <div class="col-6 d-flex flex-column">
             <p class="fw-bold mb-1" style="color:#2E86DE;">Belanja</p>
