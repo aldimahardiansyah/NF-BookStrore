@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,13 +22,13 @@ Route::get('/kategori/{id}', [KategoriController::class, 'show']);
 
 Route::get('/detail/{id}', [BookController::class, 'detail']);
 
-Route::get('/daftar', function () {
-    return view('login.member', ["title" => "Daftar Member"]);
-});
+Route::get('/daftar', [LoginController::class, 'daftar']);
 
-Route::get('/login', function () {
-    return view('login.login', ["title" => "Login"]);
-});
+Route::post('/store', [LoginController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'login']);
+
+Route::post('/dologin', [LoginController::class, 'authenticate']);
 
 Route::get('/blog', function(){
     return view('contents.blog.blog', [
