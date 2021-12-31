@@ -29,6 +29,6 @@
         </div>
     </div>
     <div class="bg-light d-flex justify-content-center p-2">
-        <small>&copy; 2021 RPL Sprint</small>
+        <small>&copy; 2021 - Kelompok 6 TI01 RPL Sprint | <a href="https://www.nurulfikri.ac.id">STT Terpadu Nurul Fikri</a></small>
     </div>
 </footer>
