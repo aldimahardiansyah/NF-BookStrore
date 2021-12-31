@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    @if ($title=='Stok')
+        <!-- External CSS -->
+        <link rel="stylesheet" href="{{ url('/css/style.css')}}">
+    @endif
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -34,14 +39,27 @@
     <title>NF Book | {{ $title }}</title>
   </head>
   <body>
-    @if ($title!='Login'&&$title!='Daftar Member')
+    @if ($title!='Login'&&$title!='Daftar Member'&&$title!='Stok')
         @include('partials.navbar')
     @endif
     <div class="container-fluid">
-        @yield('content')
+        @if ($title=='Stok')
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div>@include('partials.sidebar')</div>
+                    </div>
+                    <div class="col-md-10">
+                        <div>@yield('content')</div>
+                    </div>
+                </div>
+            </div>
+        @else
+            @yield('content')
+        @endif
     </div>
 
-    @if ($title!='Login'&&$title!='Daftar Member')
+    @if ($title!='Login'&&$title!='Daftar Member'&&$title!='Stok')
         @include('partials.footer')
     @endif
 

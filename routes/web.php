@@ -34,6 +34,8 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::post('/search', [BookController::class, 'search']);
 
+Route::get('/stok', [BookController::class, 'stok']);
+
 Route::get('/blog', function(){
     return view('contents.blog.blog', [
         'title' => 'Blog'
