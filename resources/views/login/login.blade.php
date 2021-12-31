@@ -5,35 +5,41 @@
             alert("{{ session('jsAlert') }}");
         </script>
     @endif
-    <h1><b>Masuk</b></h1>
+
+    <div class="p-3">
+        <img height="60em" src="/img/STTNF.png" alt="logo sttnf">
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <form action="/dologin" method="POST">
+            <div class="col d-flex flex-column justify-content-center">
+                <h1><b>Masuk</b></h1>
+                <form action="/dologin" method="POST" class="col-9">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1"></label>
-                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Email" required>
+                        <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Email" required>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1"></label>
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i>  Masuk</button>
                 </form>
+                <p class="mt-3">Belum memiliki Akun? <a href="/daftar">Daftar</a></p>
+                <div class="d-flex col-9 justify-content-evenly mt-4">
+                    <button type="submit" class="btn btn-primary">Masuk Melalui FB <i class="fab fa-facebook"></i></button>
+                    <button type="submit" class="btn btn-danger">Masuk Melalui Google <i class="fab fa-google"></i></button>
+                </div>
             </div>
             <div class="col">
                 <img src="img/b2.png" alt="Book Store" width="500" height="500">
             </div>
-        </div>
-    </div>
-    <br>
-    <p>Belum memiliki Akun? <a href="/daftar">Daftar</a></p>
-    <div class="col-sm-5"><button type="submit" class="btn btn-primary"><i class="fab fa-facebook"></i> Masuk Melalui Facebook</button>
-        <br>
-        <p>Atau</p>
-        <div class="col-sm-7"><button type="submit" class="btn btn-danger"><i class="fab fa-google"></i> Masuk Melalui Google</button>
         </div>
     </div>
     </div>

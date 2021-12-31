@@ -28,7 +28,7 @@
                 <a class="nav-link" href="#"><i class="fa fa-shopping-cart text-blue"></i></a>
               </li>
               <li class="nav-item d-flex justify-content-end ml-5">
-                @if (auth()->user())
+                @auth
                   <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Hai, {{ auth()->user()->name }}
@@ -40,8 +40,8 @@
                     </ul>
                   </div>
                 @else
-                  <a class="nav-link btn btn-primary bg-blue text-light" href="/login"><strong>Masuk</strong></a>
-                @endif
+                  <a class="nav-link btn btn-primary bg-blue text-light" href="/login"><strong>Masuk</strong></a>                  
+                @endauth
               </li>
           </ul>
       </div>
