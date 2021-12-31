@@ -1,5 +1,9 @@
 <?php
   $kategoris = App\Models\Kategori::all();
+  $keranjang = [];
+  if(Auth::check()){
+    $keranjang = App\Models\Keranjang::where('user_id', auth()->user()->id)->get();
+  }
 ?>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm" style="background-color: #fff">
     <div class="container-fluid">
@@ -25,7 +29,7 @@
                 <a class="nav-link active text-primary text-decoration-underline" href="/"><b>Home</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-shopping-cart text-blue"></i></a>
+                <a class="nav-link" href="/keranjang"><i class="fa fa-shopping-cart text-blue"></i><sup>({{ count($keranjang) }})</sup></a>
               </li>
               <li class="nav-item d-flex justify-content-end ml-5">
                 @auth

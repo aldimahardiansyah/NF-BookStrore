@@ -1,5 +1,10 @@
 @extends('../main')
 @section('content')
+    @if (session()->has('jsAlert'))
+      <script>
+          alert("{{ session('jsAlert') }}");
+      </script>
+    @endif
     <div class="container mt-2 rounded shadow row-md-12 bg-blue d-md-flex" style="height: 510px">
         <div class="text-light col-md-6 d-flex align-items-start flex-column justify-content-center h-100">
             <div class="m-4">

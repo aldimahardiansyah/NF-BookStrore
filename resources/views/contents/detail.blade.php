@@ -42,6 +42,15 @@
 </head>
 
 <body>
+  <?php
+    $diskon = $book->harga-$book->harga*$book->diskon/100
+  ?>
+  @if (session()->has('jsAlert'))
+    <script>
+        alert("{{ session('jsAlert') }}");
+    </script>
+  @endif
+
   @include('partials.navbar')
   <div class="container-fluid pt-3">
     <div class="row">
@@ -69,18 +78,26 @@
               <div>
                 <h5 style="float: left;">Jumlah Barang</h5>
                 <div class="d-grid gap-2 d-md-block" style="float: right;">
-                  <button class="btn btn-outline-dark" type="button">+</button>
-                  <button class="btn btn-outline-dark" type="button">1</button>
-                  <button class="btn btn-outline-dark" type="button">-</button>
+                  <button id="kurang" class="btn btn-outline-dark" type="button">-</button>
+                  <button id="jumlah" class="btn btn-outline-dark" disabled>1</button>
+                  <button id="tambah" class="btn btn-outline-dark" type="button">+</button>
                 </div>
               </div>
               <br><br>
               <hr>
               <h5 style="float: left;">Subtotal Harga</h5>
-              <h5 style="float: right; color:#1C80FE">Rp.{{$book->harga}},-</h5>
+              <h5 id="harga" style="float: right; color:#1C80FE">Rp.{{$diskon}},-</h5>
               <br><br><br>
               <div class="d-grid gap-2 d-md-flex justify-content-center">
-                <button class="btn btn-outline-secondary me-md-2" type="button">Tambah ke Keranjang</button>
+
+                <form action="/keranjang/tambah" method="post">
+                  @csrf
+                  <input id="input_jumlah" type="number" name="jumlah" hidden>
+                  <input type="number" id="input_harga" name="harga" hidden>
+                  <input type="number" name="book_id" value="{{ $book->id }}" hidden>
+                  <input class="btn btn-outline-secondary me-md-2" type="submit" value="Tambah ke Keranjang">
+                </form>
+
                 <button class="btn btn-primary" type="button">Beli Sekarang</button>
               </div>
             </div>
@@ -96,7 +113,7 @@
                 <p>Tanggal Terbit</p>
                 <p>{{$book->tgl_terbit}}</p>
                 <p>ISBN</p>
-                <p>{{$book->isbn}}</p>
+                <p>{{$book->ISBN}}</p>
                 <p>Bahasa</p>
                 <p>{{$book->bahasa->nama}}</p>
               </div>
@@ -130,6 +147,9 @@
             <h5 class="card-title">Produk Serupa</h5>
             <br>
             @foreach ($books as $books)
+            <?php
+                  $diskons = $books->harga-$books->harga*$books->diskon/100
+            ?>
             <div class="card border-0 p-1" style="max-width: 540px;">
               <div class="row g-0">
                 <div class="col-md-5 mt-3">
@@ -140,7 +160,7 @@
                 <div class="col-md-7">
                   <div class="card-body">
                     <h6 class="card-title">{{$books->judul}}</h6>
-                    <p class="card-text">Rp.{{$books->harga}}</p>
+                    <p class="card-text">Rp. {{ number_format($diskons,0,',','.') }}</p>
                   </div>
                 </div>
               </div>
@@ -154,6 +174,50 @@
     @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      let rupiah = (numb) =>{
+        numb = parseInt(numb);
+        const format = numb.toString().split('').reverse().join('');
+        const convert = format.match(/\d{1,3}/g);
+        const rupiah = 'Rp. ' + convert.join('.').split('').reverse().join('')
+
+        return rupiah;
+      }
+      let count = 1;
+      let total_harga = parseInt({{ $diskon }});
+      let jumlah = document.getElementById('jumlah');
+      jumlah.innerHTML = count;
+      let input_jumlah = document.getElementById('input_jumlah');
+      input_jumlah.value = count;
+      let tambah = document.getElementById('tambah');
+      let kurang = document.getElementById('kurang');
+      let harga = document.getElementById('harga');
+      harga.innerHTML=rupiah(total_harga) + ',-';
+      let input_harga = document.getElementById('input_harga');
+      input_harga.value = total_harga;
+
+      tambah.addEventListener('click', ()=>{
+        if(count < {{ $book->stok }}){
+          count += 1;
+        }
+        jumlah.innerHTML = count;
+        input_jumlah.value= count;
+
+        harga.innerHTML=rupiah(total_harga * count) + ',-';
+        input_harga.value = total_harga * count;
+      });
+
+        kurang.addEventListener('click', ()=>{
+        if(count > 1){
+          count -= 1;
+        }
+        jumlah.innerHTML = count;
+        input_jumlah.value= count;
+
+        harga.innerHTML=rupiah(total_harga * count) + ',-';
+        input_harga.value = total_harga * count;
+        });
+    </script>
 </body>
 
 </html>

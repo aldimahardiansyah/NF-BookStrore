@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,12 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
 Route::post('/search', [BookController::class, 'search']);
 
 Route::get('/stok', [BookController::class, 'stok']);
+
+Route::get('/keranjang', [KeranjangController::class, 'index']);
+
+Route::post('/keranjang/tambah', [KeranjangController::class, 'store']);
+
+Route::get('/keranjang/delete/{id}', [KeranjangController::class, 'destroy']);
 
 Route::get('/blog', function(){
     return view('contents.blog.blog', [

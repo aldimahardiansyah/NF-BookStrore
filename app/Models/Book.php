@@ -31,4 +31,8 @@ class Book extends Model
     public function bahasa(){
         return $this->belongsTo(Bahasa::class);
     }
+
+    public function keranjang(){
+        return $this->hasMany(Keranjang::class);
+    }
 }
