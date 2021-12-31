@@ -31,8 +31,13 @@ class BookController extends Controller
         ]);
     }
 
-    // function search(Request $request){
-    //     $result = Book::where('judul', $request->judul);
+    function search(Request $request){
+        $result = Book::where('judul', 'like', "%$request->judul%")->get();
 
-    // }
+        return view('contents.search_results', [
+            'title' => 'Search result',
+            'results' => $result,
+            'judul' => $request->judul
+        ]);
+    }
 }
