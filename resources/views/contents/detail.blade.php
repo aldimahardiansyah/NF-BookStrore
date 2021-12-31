@@ -54,8 +54,8 @@
             <img src="/book/{{$book->thumbnail}}" class="rounded" width="95px" alt="">
           </div>
         </div>
-        <div class="col-8">
-          <div class="card border-light p-3" style="max-width: 700px;">
+        <div class="col">
+          <div class="card border-light p-3">
             <div class="card-body">
               <h6>{{$book->judul}}</h6>
               <h5 class="card-title">{{$book->judul}}</h5>

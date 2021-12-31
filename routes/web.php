@@ -32,6 +32,8 @@ Route::post('/dologin', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
+Route::post('/search', [BookController::class, 'search']);
+
 Route::get('/blog', function(){
     return view('contents.blog.blog', [
         'title' => 'Blog'

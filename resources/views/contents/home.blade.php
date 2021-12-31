@@ -15,7 +15,7 @@
               <form action="/search" method="POST">
                 @csrf
                 <div class="p-1 bg-light rounded-pill d-flex w-75">
-                  <input type="text" class="form-control border-0 rounded-pill" placeholder="Judul, kategori, penulis buku">
+                  <input name="judul" type="text" class="form-control border-0 rounded-pill" placeholder="Masukkan judul buku">
                   <input type="submit" class="btn btn-primary rounded-pill px-3" value="Cari">
                 </div>
               </form>

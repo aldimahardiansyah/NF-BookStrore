@@ -30,4 +30,9 @@ class BookController extends Controller
             'books' => Book::all()
         ]);
     }
+
+    // function search(Request $request){
+    //     $result = Book::where('judul', $request->judul);
+
+    // }
 }
