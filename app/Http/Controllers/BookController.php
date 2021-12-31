@@ -32,7 +32,7 @@ class BookController extends Controller
     }
 
     function search(Request $request){
-        $result = Book::where('judul', 'like', "%$request->judul%")->get();
+        $result = Book::where(strtoupper('judul'), 'like', strtoupper("%$request->judul%"))->get();
 
         return view('contents.search_results', [
             'title' => 'Search result',
