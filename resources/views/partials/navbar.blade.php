@@ -35,7 +35,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                          <a class="dropdown-item" href="/logout">Logout</a>
+                          <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"> </i> Logout</a>
                         </li>
                     </ul>
                   </div>

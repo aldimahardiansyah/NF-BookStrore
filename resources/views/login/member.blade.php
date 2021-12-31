@@ -1,9 +1,13 @@
 @extends('main')
 @section('content')
-    <h1><b>Daftar</b></h1>
-    <div class="container">
-        <div class="row">
-            <div class="col">
+<div class="p-3 d-flex align-items-center">
+    <img height="60em" src="/img/STTNF.png" alt="logo sttnf">
+    <h1 class="mx-3">NF<span class="text-primary">Books</span></h1>
+</div>
+<div class="container">
+    <div class="row d-flex align-items-center">
+        <div class="col">
+                <h1><b>Daftar</b></h1>
                 <form action="/store" method="POST">
                     @csrf
                     <div class="form-group">
@@ -33,22 +37,19 @@
                             </div>
                         @enderror
                     </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Daftar</button>
+                    <button type="submit" class="btn btn-primary mt-3">Daftar</button>
                 </form>
+
+                <p class="mt-3">Daftar Melalui :</p>
+                <div class="col d-flex justify-content-evenly">
+                    <button type="submit" class="btn btn-primary"><i class="fab fa-facebook"></i> Masuk Melalui Facebook</button>
+                    <button type="submit" class="btn btn-danger"><i class="fab fa-google"></i> Masuk Melalui Google</button>
+                </div>
             </div>
+
             <div class="col">
                 <img src="img/b1.png" alt="Reading Book" width="600" height="500">
             </div>
         </div>
     </div>
-    <br>
-    <p>Daftar Melalui :</p>
-    <div class="col-sm-5"><button type="submit" class="btn btn-primary"><i class="fab fa-facebook"></i> Masuk Melalui Facebook</button>
-        <br>
-        <p>Atau</p>
-        <div class="col-sm-7"><button type="submit" class="btn btn-danger"><i class="fab fa-google"></i> Masuk Melalui Google</button>
-        </div>
-    </div>
-    <br>
 @endsection

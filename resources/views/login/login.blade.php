@@ -6,8 +6,9 @@
         </script>
     @endif
 
-    <div class="p-3">
+    <div class="p-3 d-flex align-items-center">
         <img height="60em" src="/img/STTNF.png" alt="logo sttnf">
+        <h1 class="mx-3">NF<span class="text-primary">Books</span></h1>
     </div>
     <div class="container">
         <div class="row">
