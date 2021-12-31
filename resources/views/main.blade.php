@@ -7,7 +7,7 @@
 
     @if ($title=='Stok')
         <!-- External CSS -->
-        <link rel="stylesheet" href="{{ url('/css/style.css')}}">
+        <link rel="stylesheet" href="/css/style.css">
     @endif
 
     <!-- Bootstrap CSS -->
