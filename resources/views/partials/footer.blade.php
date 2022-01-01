@@ -16,7 +16,7 @@
         <div class="col-6 d-flex flex-column">
             <p class="fw-bold mb-1" style="color:#2E86DE;">Informasi</p>
             <a class="text-decoration-none" href="/blog">Blog</a>
-            <a class="text-decoration-none" href="#">FAQ</a>
+            <a class="text-decoration-none" href="/FAQ">FAQ</a>
             <a class="text-decoration-none" href="#">Syarat dan Ketentuan</a>
         </div>
     </div>

@@ -15,7 +15,7 @@ class KeranjangController extends Controller
                 'keranjang' => Keranjang::where('user_id', Auth::user()->id)->get()
             ]);
         } else{
-            return back()->with('jsAlert', 'Mohon login terlebih dahulu sebelum mengakses keranjang!');
+            return redirect('/login')->with('jsAlert', 'Mohon login terlebih dahulu sebelum mengakses keranjang!');
         }
     }
 

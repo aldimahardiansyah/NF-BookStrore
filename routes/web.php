@@ -54,3 +54,9 @@ Route::get('/blog/content', function(){
         'title' => 'Content Blog'
     ]);
 });
+
+Route::get('/FAQ', function(){
+    return view('contents.faq', [
+        'title' => 'FAQ'
+    ]);
+});
