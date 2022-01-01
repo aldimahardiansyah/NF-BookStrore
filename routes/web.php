@@ -43,6 +43,18 @@ Route::post('/keranjang/tambah', [KeranjangController::class, 'store']);
 
 Route::get('/keranjang/delete/{id}', [KeranjangController::class, 'destroy']);
 
+Route::get('/admin', function(){
+    return view('admin.produk.index', [
+        'title' => 'Semua Produk'
+    ]);
+});
+
+Route::get('/admin/produk/add', function(){
+    return view('admin.produk.add', [
+        'title' => 'Tambah Produk'
+    ]);
+});
+
 Route::get('/blog', function(){
     return view('contents.blog.blog', [
         'title' => 'Blog'

@@ -1,11 +1,13 @@
 <div class="sidenav d-flex flex-column flex-shrink-0 p-3">
     <h2 style="color:white;font-size:20px;margin-left:10px">Nurul Fikri<br/>Book Store</h2>
+
     <div class="container-fluid">
         <a class="navbar-brand" href="#home">
             <i class="fa fa-home"></i>
             Home
         </a>
     </div>
+
     <div class="container-fluid">
         <a class="navbar-brand" href="#produk">
             <i class="fa fa-box-open"></i>
@@ -22,6 +24,7 @@
             </ul>
         </li>
     </div>
+
     <div class="container-fluid" style="margin-bottom:200pt">
         <a class="navbar-brand" href="#pengaturan">
             <i class="fa fa-cog"></i>
