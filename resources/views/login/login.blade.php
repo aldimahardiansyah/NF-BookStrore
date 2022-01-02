@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col d-flex flex-column justify-content-center">
                 <h1><b>Masuk</b></h1>
-                <form action="/dologin" method="POST" class="col-9">
+                <form action="/dologin" method="POST" class="col-md-9">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1"></label>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="col">
-                <img src="img/b2.png" alt="Book Store" width="500" height="500">
+                <img src="img/b2.png" class="gambar-login" alt="Book Store" width="500" height="500">
             </div>
         </div>
     </div>

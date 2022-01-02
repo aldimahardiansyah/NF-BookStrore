@@ -42,6 +42,10 @@
                 background-color: red;
                 width: 0;
             }
+            .gambar-login{
+                height: 0;
+                width: 0;
+            }
         }
     </style>
 

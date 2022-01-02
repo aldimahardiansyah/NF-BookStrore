@@ -48,7 +48,7 @@
             </div>
 
             <div class="col">
-                <img src="img/b1.png" alt="Reading Book" width="600" height="500">
+                <img src="img/b1.png" class="gambar-login" alt="Reading Book" width="600" height="500">
             </div>
         </div>
     </div>

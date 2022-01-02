@@ -54,9 +54,9 @@
   @include('partials.navbar')
   <div class="container-fluid pt-3">
     <div class="row">
-      <div class="col-9 d-flex flex-wrap">
-        <div class="card border-0">
-          <div class="card p-3">
+      <div class="col-sm-9 d-flex flex-wrap">
+        <div class="border-0 bg-white col-12 col-sm-4 d-flex flex-column align-items-center">
+          <div class="p-3">
             <img src="/book/{{$book->thumbnail}}" height="453px" width="285px" alt="">
           </div>
           <div class="card-body">
@@ -77,7 +77,7 @@
               <h5>Beli</h5>
               <div>
                 <h5 style="float: left;">Jumlah Barang</h5>
-                <div class="d-grid gap-2 d-md-block" style="float: right;">
+                <div class="d-flex gap-2 d-md-block" style="float: right;">
                   <button id="kurang" class="btn btn-outline-dark" type="button">-</button>
                   <button id="jumlah" class="btn btn-outline-dark" disabled>1</button>
                   <button id="tambah" class="btn btn-outline-dark" type="button">+</button>
@@ -141,7 +141,7 @@
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-0 col-md-3">
         <div class="card border-0 p-2">
           <div class=" card-body">
             <h5 class="card-title">Produk Serupa</h5>
